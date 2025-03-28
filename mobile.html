@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibin Boby Varghese</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.4; 
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: rgba(8, 8, 8, 0.9);
+        }
+
+        .nav-left h1 {
+            font-size: 18px; /* Reduced font size for the navigation */
+            margin: 0;
+        }
+
+        .nav-right a {
+            text-decoration: none;
+            color: white;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+            font-size: 14px; 
+        }
+
+        .nav-right a:hover {
+            color: purple;
+        }
+
+        h2 {
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0; 
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px; 
+            gap: 20px; 
+            flex-wrap: wrap;
+            justify-content: center; /* Center content for better alignment */
+        }
+
+        .photo-container {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            margin-left: -50px; 
+            flex-shrink: 0;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: appear 0.5s ease-out forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .mescript {
+            max-width: 800px;
+            text-align: justify;
+            font-size: 14px; 
+        }
+
+        .mescript p {
+            margin: 5px 0; 
+            opacity: 0; 
+            transform: translateY(20px); 
+            animation: slideAndFade 0.8s ease-out forwards; 
+        }
+
+        .mescript p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .mescript p:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .mescript p:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .mescript p:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .mescript p:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        @keyframes slideAndFade {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); 
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); 
+            }
+        }
+
+        footer {
+            background-color: rgba(8, 8, 8, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .socialmedia img {
+            width: 25px; /* Reduced size of footer images */
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        /* Skill Section */
+        .skill-container {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .skill-label {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 15px;
+            overflow: hidden;
+            position: relative;
+            width: 100%; /* Ensure it adjusts to screen size */
+        }
+
+        .skill-bar-fill {
+            background: linear-gradient(to right, #6a5acd, #9370db);
+            height: 100%;
+            width: 0;
+            border-radius: 10px;
+            animation: fillBar 2s ease-in-out forwards;
+        }
+
+        @keyframes fillBar {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: var(--skill-percentage);
+            }
+        }
+
+        .skill-percentage {
+            position: absolute;
+            right: 5px;
+            top: 0;
+            font-size: 12px;
+            color: white;
+        }
+
+        #certifications{
+            font-size: x-large;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .nav-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-right a {
+                margin-left: 0;
+                margin-top: 10px;
+                font-size: 10px;
+            }
+
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .photo-container {
+                width: 250px;
+                height: 250px;
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+
+            .mescript {
+                max-width: 100%;
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .skill-container {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .socialmedia img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h2 {
+                font-size: 22px;
+            }
+
+            .nav-left h1 {
+                font-size: 16px; /* Even smaller text for mobile */
+            }
+
+            .skill-bar {
+                height: 10px;
+                width: 90%; /* Avoid the bar touching both ends on small screens */
+            }
+
+            .skill-label {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <h1>Bibin Boby Varghese</h1>
+        </div>
+        <div class="nav-right">
+            <a href="#aboutme">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+        </div>
+    </nav>
+    
+    <section id="aboutme" class="section">
+        <h2>ABOUT ME</h2>
+        <div class="content">
+            <div class="photo-container">
+                <img src="myimage.png" alt="Bibin Boby Varghese">
+            </div>
+            <div class="mescript">
+                <p>
+                    I am Bibin Boby Varghese, a dedicated cybersecurity enthusiast, game developer, and web designer from Ernakulam. I am currently pursuing a Bachelor of Technology (B.Tech) degree in Computer Science (Cybersecurity) at Ilahia College of Engineering and Technology.
+                </p>
+                <p>
+                    I serve as a campus ambassador for the All Kerala Esports Federation (AKEF) and the Game Development Club (GDC), where I actively promote the growth of gaming and development communities.
+                </p>
+                <p>
+                    I hold industry-recognized certifications, including Introduction to Cybersecurity and Networking Basics from Cisco, as well as an SQL Injection Attack certification from EC-Council. These credentials reflect my commitment to staying at the forefront of the evolving cybersecurity landscape.
+                </p>
+                <p>
+                    In addition to my technical expertise, I have led successful initiatives such as "Code and Create with Scratch," a workshop introducing young learners to game development and programming fundamentals. My proficiency in design tools like Adobe Photoshop and Adobe Illustrator allows me to create visually compelling and user-friendly designs.
+                </p>
+                <p>
+                    Currently, I am enhancing my skills in C# and Unity for game development and refining my expertise in web development to build secure and engaging online experiences. I am passionate about leveraging technology to solve complex problems and create meaningful digital experiences. I am eager to collaborate with like-minded professionals and contribute to innovative projects that make a difference.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="section">
+        <h2>SKILLS</h2>
+        <div class="skill-container">
+            <!-- Cybersecurity Skill Bar -->
+            <div class="skill">
+                <div class="skill-label">Cybersecurity</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="--skill-percentage: 60%;"></div>
+                    <div class="skill-percentage">60%</div>
+                </div>
+            </div>
+
+            <!-- Game Development Skill Bar -->
+            <div class="skill">
+                <div class="skill-label">Game Development</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="--skill-percentage: 30%;"></div>
+                    <div class="skill-percentage">30%</div>
+                </div>
+            </div>
+
+            <!-- Web Design Skill Bar -->
+            <div class="skill">
+                <div class="skill-label">Web Design</div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" style="--skill-percentage: 90%;"></div>
+                    <div class="skill-percentage">90%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="certifications" class="section">
+        <h2>CERTIFICATIONS</h2>
+        <p>This section is currently under maintenance !!! </p>
+    </section>
+    
+    <footer>
+        <div class="socialmedia">
+            <a href="https://github.com/BIBINBOBYVARGHESE"><img src="github.png" alt="github"></a>
+            <a href="https://www.linkedin.com/in/bibin-boby-varghese-092722270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="linkedin.png" alt="linkedin"></a>
+            <a href="https://www.instagram.com/bibin_boby_varghese?igsh=MW0zaHI5b2ZpOG96MQ=="><img src="insta.png" alt="instagram"></a>
+            <a href="mailto:varghesebibinboby@gmail.com"><img src="mail.png" alt="mail"></a>
+        </div>
+        <p>2025 @ Bibin Boby Varghese</p>
+    </footer>
+</body>
+</html>
